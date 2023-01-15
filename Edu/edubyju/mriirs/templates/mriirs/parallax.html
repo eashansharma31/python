@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax</title>
+</head>
+<body>
+    <div class="parallax" >
+        <div class="container mt-3" style="color: aliceblue; font-size: 1.5cm; text-align:right;">
+            Rediscover Yourself With MyTravels
+        
+        <div class="row">
+            <div class="col-lg-6" style="color: aliceblue; font-size: 1.15cm; text-align:justify;">
+                
+            </div>
+            <div class="col-lg-6"style="color: aliceblue; font-size: .75cm; text-align:justify;">
+               <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                </p>
+                <div class="container" style="float: right;">
+                <img style="float: right;" src="{% static 'mriirs/sign.png' %}">
+                </div>
+                <div class="container" style="float: right;">
+                    <h3 style="float: right;">CEO - MyTravels</h3>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+    <style>
+        .parallax{
+            min-height: 400px;
+            background-image:url("{% static 'mriirs/im4.jpg' %}") ;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+    </style>
+</body>
+</html>

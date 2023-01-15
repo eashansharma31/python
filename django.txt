@@ -1,0 +1,83 @@
+django project(travel Agency)
+#command prompt commands
+python -m virtualenv p1
+dir
+cd p1
+dir
+cd script
+cd..
+cd..(travel folder)
+.\p1\Scripts\activate(to activate venv)
+deactivate(deactivates venv)
+pip freeze(shows all packages in venv)
+pip install django
+pip freeze
+django-admin --help(all django commands)
+django-admin startproject travdash
+dir
+cd travdash
+django-admin startapp mriirs
+dir
+python mange.py runserver
+to run app in browser (localhost:8000)
+open vs code
+open settings.py
+go to installed apps
+add mriirs app and put comma
+now go to urls.py
+delete url in urlpatterns
+add: path('',views.home,name='home')
+from mriirs import views
+open views we will create function based views
+from django.http import HttpResponse
+def home(request):
+return HttpResponse("<h1>Manav Rachna</h1>)
+create templates folder in mriirs
+create mriirs folder in templates
+create file index.html
+type:- return render(request,'mriirs/index.html')
+create navbar in index.html using bootstrap 
+create static folder in mriirs
+create mriirs in static
+put an image in mriirs folder
+add staticroot commands from gfg and add below static url and import os
+add staticfiles_dirs from gfg 
+
+create a modal in modals.py
+class myclient(models.Model):
+email=models.EmailField()
+     def __str__(self):
+     return self.email
+
+now create a superuser
+python manage.py makemigrations
+python mange.py migrate
+pyhton manage.py create superuser
+register the model in admin.py
+from .models import myclient
+admin.site.register(myclient)
+
+goto forms.py
+from django import forms
+from .models import myclient
+
+class clientform(forms.ModelForm)
+      class Meta:
+      model=myclient
+      fields="__all__"
+CSRF token
+create new file of html(newsletter)
+add path ('newsletter/',views.newsletter,name=newsletter),
+
+in views.py
+from django.shortcuts import redirect
+from .models import myclient
+from .forms import clientform
+   def(request):
+   form=clientform(request.POST or None)
+   if form.is_valid();
+      form.save()
+   return redirect(home)
+   return render(request,'mriis/newsletter.html',{'form':form})
+{%csrf token%}
+{{form.as_p}}
